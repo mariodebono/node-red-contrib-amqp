@@ -14,7 +14,7 @@
     label: function() {
       const { host, port, vhost } = this
       const protocol = this.tls ? 'amqps' : 'amqp'
-      return `${protocol}://${host}:${port}/${vhost}`
+      return `${protocol}://${host}:${port}${vhost ? `/${vhost}` : ''}`
     },
   })
 </script>
