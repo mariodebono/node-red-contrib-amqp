@@ -4,7 +4,7 @@ import { ErrorType } from '../types'
 import Amqp from '../Amqp'
 
 module.exports = function(RED: Red): void {
-  function AmqpIn(config): void {
+  function AmqpOut(config): void {
     RED.nodes.createNode(this, config)
     this.status(NODE_STATUS.Disconnected)
     const amqp = new Amqp(RED, this, config)
@@ -49,5 +49,5 @@ module.exports = function(RED: Red): void {
       }
     })(this)
   }
-  RED.nodes.registerType('amqp-out', AmqpIn)
+  RED.nodes.registerType('amqp-out', AmqpOut)
 }
